@@ -1,5 +1,7 @@
-This is another file with anything \n
+This is another file with anything
+
 *These are some words in italics*
+
 **and these are in bold**
 # big headings
 ## and small headings
