@@ -1,6 +1,6 @@
-# Lab Report 2 Week 1
+# Lab Report 2 Week 1: ieng6 Tutorial
 
+Installing VScode
+-----------------
 
-ieng6 Tutorial
---------------
-
+![image](file:///C:/Users/brian/Desktop/vscode.JPG)
