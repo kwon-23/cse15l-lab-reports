@@ -3,4 +3,4 @@
 Installing VScode
 -----------------
 
-![image](file:///C:/Users/brian/Desktop/vscode.JPG)
+![image](cse15l-lab-reports/vscode.JPG?raw=true)
