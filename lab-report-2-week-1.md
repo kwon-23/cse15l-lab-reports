@@ -3,4 +3,4 @@
 Installing VScode
 -----------------
 
-![image](cse15l-lab-reports/vscode.jpg?raw=true)
+![image](vscode.JPG?raw=true)
