@@ -33,3 +33,13 @@ You can easily move files between the remote server and your personal device thr
 Setting an SSH Key
 ------------------
 
+SSH keys greatly simplify the process of logging into a remote account by removing the need to type in a password. In order to make an SSH key for your remote account, you have to ttype in the command **ssh-keygen** on your local device, which will prompt you to enter a file to save the key. Type in the directory **/Users/user_name/.ssh/id_rsa**, and press enter twice to ignore setting a passphrase. Then, log onto your remote server through normal ssh and type the command **mkdir .ssh**, which is where your public key, which you made by the command **ssh-keygen**, will be placed. Log out of the remote server with exit, then type the command **scp /Users/user_name/.ssh/id_rsa/pub cs15lfa22__@ieng6.ucsd.edu:~/.ssh/authorized_keys**, making sure to type in your personal information where user_name and the __ are.This should be the process to be able to log into the remote server without typing in your password. However, I already have a key that I need to use in another class, so it does not work for me.
+
+![image](ssh_keygen.JPG?raw=true)
+
+Optimizing Remote Running
+-------------------------
+
+By adding commands in quotes to the end of certain commands like ssh, and using semicolons to run multiple commands in the same line, connecting and using files in the remote server can become a lot easier. For example, in order to locally edit WhereAmI.java, then copying it onto the remote server and running it can be done with two commands. The command **scp WhereAmI.java cs15lfa22__@ieng6.ucsd.edu:/~** is used to copy the edited WhereAmI.java onto the remote server, and the command **ssh cs15lfa22__@ieng6.ucsd.edu “javac WhereAmI.java ; java WhereAmI”** is used to log onto the server and compile and run WhereAMI on the remote server. 
+
+![image](optimized_running.JPG?raw=true)
