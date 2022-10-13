@@ -10,7 +10,7 @@ In order to download VScode, all you have to do is go to https://code.visualstud
 Remotely Connecting
 -------------------
 
-Remotely connecting to the ieng6 server is done through the ssh command, which stands for secure shell. In order to remotely connect to the ieng6 server, you need to type the command **ssh cs15lfa22__@ieng6.ucsd.edu**, where the space is for your personal two letter code. This command not only works for CSE 15L, as other classes can use this command by changing the class name and the quarter name.
+Remotely connecting to the ieng6 server is done through the ssh command, which stands for secure shell. To access the terminal on Visual Studio, go to the top toolbar to where it says **Terminal**, then select **New Terminal**. This will open a terminal you can type your commands into. In order to remotely connect to the ieng6 server, you need to type the command **ssh cs15lfa22__@ieng6.ucsd.edu**, where the space is for your personal two letter code. You can find this two letter code from the website [here](https://sdacs.ucsd.edu/~icc/index.php). Type in your username and student ID in order to get your class ID, which contains your two letter code. This command not only works for CSE 15L, as other classes can use this command by changing the class name and the quarter name.
 
 ![image](ieng6_login.JPG?raw=true)
 
@@ -26,14 +26,27 @@ Within the remote server, there are several different commands that you can try,
 Moving Files with scp
 ---------------------
 
-You can easily move files between the remote server and your personal device through the command **scp**. For this example, we have a file WhereAmI.java that we can move from my personal device to the remote server. The command is **scp file_name user_to_move_to:directory_to_move_to**, so to move our WhereAmI.java file to the remote server, the command is **scp WhereAmI.java cs15lfa22oy@ieng6.ucsd.edu:~/**. Doing so will prompt you for the password, and then your files will be copied onto the remote server.
+You can easily move files between the remote server and your personal device through the command **scp**. For this example, we have a file WhereAmI.java that we can move from my personal device to the remote server. The code for the file WhereAmI.java can be written as
+
+'''
+class WhereAmI {
+  public static void main(String[] args) {
+    System.out.println(System.getProperty("os.name"));
+    System.out.println(System.getProperty("user.name"));
+    System.out.println(System.getProperty("user.home"));
+    System.out.println(System.getProperty("user.dir"));
+  }
+}
+'''
+
+The command is **scp file_name user_to_move_to:directory_to_move_to**, so to move our WhereAmI.java file to the remote server, the command is **scp WhereAmI.java cs15lfa22oy@ieng6.ucsd.edu:~/**. Doing so will prompt you for the password, and then your files will be copied onto the remote server.
 
 ![image](scp.JPG?raw=true)
 
 Setting an SSH Key
 ------------------
 
-SSH keys greatly simplify the process of logging into a remote account by removing the need to type in a password. In order to make an SSH key for your remote account, you have to ttype in the command **ssh-keygen** on your local device, which will prompt you to enter a file to save the key. Type in the directory **/Users/user_name/.ssh/id_rsa**, and press enter twice to ignore setting a passphrase. Then, log onto your remote server through normal ssh and type the command **mkdir .ssh**, which is where your public key, which you made by the command **ssh-keygen**, will be placed. Log out of the remote server with exit, then type the command **scp /Users/user_name/.ssh/id_rsa/pub cs15lfa22__@ieng6.ucsd.edu:~/.ssh/authorized_keys**, making sure to type in your personal information where user_name and the __ are.This should be the process to be able to log into the remote server without typing in your password. However, I already have a key that I need to use in another class, so it does not work for me.
+SSH keys greatly simplify the process of logging into a remote account by removing the need to type in a password. In order to make an SSH key for your remote account, you have to type in the command **ssh-keygen** on your local device, which will prompt you to enter a file to save the key. Type in the directory **/Users/user_name/.ssh/id_rsa**, and press enter twice to ignore setting a passphrase. Then, log onto your remote server through normal ssh and type the command **mkdir .ssh**, which is where your public key, which you made by the command **ssh-keygen**, will be placed. Log out of the remote server with exit, then type the command **scp /Users/user_name/.ssh/id_rsa/pub cs15lfa22__@ieng6.ucsd.edu:~/.ssh/authorized_keys**, making sure to type in your personal information where user_name and the __ are.This should be the process to be able to log into the remote server without typing in your password. However, I already have a key that I need to use in another class, so it does not work for me.
 
 ![image](ssh_keygen.JPG?raw=true)
 
