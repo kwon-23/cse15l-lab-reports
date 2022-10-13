@@ -28,7 +28,7 @@ Moving Files with scp
 
 You can easily move files between the remote server and your personal device through the command **scp**. For this example, we have a file WhereAmI.java that we can move from my personal device to the remote server. The code for the file WhereAmI.java can be written as
 
-'''
+```
 class WhereAmI {
   public static void main(String[] args) {
     System.out.println(System.getProperty("os.name"));
@@ -37,7 +37,7 @@ class WhereAmI {
     System.out.println(System.getProperty("user.dir"));
   }
 }
-'''
+```
 
 The command is **scp file_name user_to_move_to:directory_to_move_to**, so to move our WhereAmI.java file to the remote server, the command is **scp WhereAmI.java cs15lfa22oy@ieng6.ucsd.edu:~/**. Doing so will prompt you for the password, and then your files will be copied onto the remote server.
 
