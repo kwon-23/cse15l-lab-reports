@@ -106,3 +106,62 @@ out to the website.
 Part Two: Bugs
 --------------
 
+The first bug is in the file ArrayExamples.java. The first method, **reverseInPlace**, has the code
+
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+
+and has the purpose of reversing an array. However, this code is buggy, and does not function properly.
+
+When given the input array **[1,2,3,4]**, the symptom, or the failed output, will be **[4,3,3,4]**. This is due to the code being incorrect, as in order
+to reverse an array, the values in the respective spots must be swapped. The code only replaces the values at the start with the values at the end, so when
+it comes to copying the values **1 and 2** at the end of the array, the only values to copy from are **3 and 4**. In order to fix this, you need to do two 
+swaps each, having a placeholder to hold a value while the other value is copied over it, and instead of traversing through the entire array, only go through half. The fixed code should look like this:
+
+```
+static void reverseInPlace(int[] arr) {
+    int placeholder = 0;
+    for(int i = 0; i < arr.length/2; i += 1) {
+        placeholder = arr[i];
+        arr[i] = arr[arr.length - i - 1];
+        arr[arr.length - i - 1] = placeholder;
+    }
+}
+```
+
+
+The second bug I chose is in the file ListExamples.java. The first method, **filter**, has the code
+
+```
+static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }
+```
+
+and has the purpose of returning a new list that has all the elements for which StringChecker, which checks if a certain value is a string, returns true. The
+values are returned in the same order as in the input list. However, due to a bug, this method does not function properly.
+
+With the input list **["a", "b", "c", "d"]**, the expected output would be the same list, **["a", "b", "c", "d"]**, but instead the list **["d", "c", "b", "a"]** is returned. This is due to an error in the code, as the **add()** function has the value and an int for an index as a parameter. Because the 0 as a parameter tells the function to add the string at the beginning of the list instead of at the end. Due to this, the list returned is in reverse order. In order to fix this, all that needs to be done is to remove the parameter 0, which calls a different overloaded function that automatically puts the input at the end of the list. The fixed code should look like this:
+
+```
+static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(s);
+      }
+    }
+    return result;
+  }
+```
