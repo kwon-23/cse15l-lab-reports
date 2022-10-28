@@ -72,7 +72,7 @@ class SearchEngine {
 
 When I first run the code and open the link to the localhost, the website looks like this:
 
-![image](start.JPG?raw=true)
+![image](start.jpg?raw=true)
 
 Here, the list words is empty, along with the matchWords list. The main method is called here, and the main method creates a new Handler object that is 
 run with the Server class, which starts my website.
