@@ -11,3 +11,6 @@ Lab Reports
 
 
 [Lab Report 3](https://kwon-23.github.io/cse15l-lab-reports/lab-report-4-week-5.html)
+
+
+[Lab Report 3](https://kwon-23.github.io/cse15l-lab-reports/lab-report-5-week-7.html)
