@@ -34,4 +34,5 @@ Part 2: Beyond CSE15L
 When making very small edits, like changing a variable name or adding a test, the first method took me about a minute to do, while doing the change on the ssh session through vim took me around only 30 seconds, which was a lot less time. This might be because I already am very used to using vim to edit and run code, while I think that doing scp and copying from Visual Studio might take longer for me as I am not as comfortable.
 
 Q1: If I were to edit code that I had to run remotely on the ieng6 server, I would much prefer using Vim, as I am more comfortable making changes and running on the ieng6 servers and scping the files back to my local machine to turn into Gradescope. 
+
 Q2: I think the main thing that would make me use my local machine over the remote is when I want to use a different environment, as the remote server only has vim while my local machine can use a variety of different code editors that may help the coding process.
